@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            margin: 10px;
+        }
+        .btn:hover {
+            background: #2980b9;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .feature {
+            flex: 1;
+            min-width: 200px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎓 Student Performance Predictor</h1>
+        <p>Predict math scores using machine learning</p>
+        <a href="/predict" class="btn">Start Predicting</a>
+        <a href="/dashboard" class="btn" style="background: #27ae60;">View Dashboard</a>
+    </div>
+    
+    <div style="text-align: center;">
+        <h2>How It Works</h2>
+        <p>Enter student details to predict their math performance score</p>
+    </div>
+    
+    <div class="features">
+        <div class="feature">
+            <div class="feature-icon">📊</div>
+            <h3>Accurate Predictions</h3>
+            <p>90%+ accuracy using ensemble learning</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">⚡</div>
+            <h3>Fast Results</h3>
+            <p>Get predictions in seconds</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🎯</div>
+            <h3>Data-Driven</h3>
+            <p>Trained on thousands of data points</p>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="/predict" class="btn" style="background: #e74c3c;">Get Started →</a>
+    </div>
+</body>
+</html>

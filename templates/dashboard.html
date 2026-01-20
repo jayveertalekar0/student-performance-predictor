@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictions Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-box {
+            flex: 1;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th {
+            background: #34495e;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        .badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: white;
+        }
+        .badge-excellent { background: #27ae60; }
+        .badge-good { background: #3498db; }
+        .badge-average { background: #f39c12; }
+        .badge-poor { background: #e74c3c; }
+        .nav {
+            margin-bottom: 20px;
+        }
+        .nav a {
+            color: #3498db;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="/">← Home</a>
+        <a href="/predict">New Prediction</a>
+    </div>
+    
+    <div class="header">
+        <h1>📊 Predictions Dashboard</h1>
+        <p>History of all predictions made</p>
+    </div>
+    
+    <div class="stats">
+        <div class="stat-box">
+            <div class="stat-number">{{ total }}</div>
+            <div>Total Predictions</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">{{ avg_score }}</div>
+            <div>Average Score</div>
+        </div>
+    </div>
+    
+    {% if predictions %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Math Score</th>
+                <th>Performance</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pred in predictions %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td style="font-size: 18px; font-weight: bold;">{{ pred.score }}/100</td>
+                <td>
+                    {% if pred.category == 'Excellent' %}
+                    <span class="badge badge-excellent">Excellent</span>
+                    {% elif pred.category == 'Good' %}
+                    <span class="badge badge-good">Good</span>
+                    {% elif pred.category == 'Average' %}
+                    <span class="badge badge-average">Average</span>
+                    {% else %}
+                    <span class="badge badge-poor">Poor</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <div style="text-align: center;">
+        <a href="/predict" class="btn">Make New Prediction</a>
+    </div>
+    
+    {% else %}
+    <div class="empty-state">
+        <h2>No predictions yet</h2>
+        <p>Make your first prediction to see results here</p>
+        <a href="/predict" class="btn">Start Predicting</a>
+    </div>
+    {% endif %}
+</body>
+</html>
