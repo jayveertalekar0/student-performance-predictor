@@ -1,151 +1,190 @@
+# 📊 Student Performance Predictor
 
-## 📊 Student Performance Predictor
-A machine learning web application that predicts student math scores based on various demographic and academic factors.
+A **machine learning–powered web application** that predicts students’ **Math scores** based on demographic and academic factors.
+Built using **Flask, Scikit-learn, and Ensemble Models**, and deployed live on **Render**.
 
-**🚀 Live Demo**
-https://img.shields.io/badge/Render-Deployed-blue
+🔗 **Live Application**
+👉 [https://student-performance-predictor-ct4p.onrender.com](https://student-performance-predictor-ct4p.onrender.com)
 
-**✨ Features**
+🔗 **GitHub Repository**
+👉 [https://github.com/jayveertalekar0/student-performance-predictor](https://github.com/jayveertalekar0/student-performance-predictor)
 
-*📈 ML-Powered Predictions:* Predict math scores with 90%+ accuracy using ensemble learning
+---
 
-*⚡ Fast Results:* Get predictions in under 2 seconds
+## 🚀 Project Overview
 
-*📱 Responsive Design:* Clean interface that works on all devices
+Educational institutions often struggle to identify students who need academic support early.
+This project solves that problem by using **machine learning to predict math performance** and classify students into meaningful performance categories.
 
-*📊 Dashboard:* Track prediction history and view statistics
+It demonstrates **end-to-end ML deployment**, from data preprocessing and model training to a fully functional production web app.
 
-*🔮 Performance Categories:* Automatic classification into Excellent/Good/Average/Poor
+---
 
-*🚀 Easy Deployment:* One-click deployment on Render.com
+## ✨ Key Features
 
-🛠️ Installation
-Prerequisites
-**Python 3.9 or higher**
+* 📈 **ML-Based Prediction**
+  Predicts math scores with **90%+ accuracy** using ensemble learning techniques
 
-pip (Python package manager)
+* ⚡ **Fast & Efficient**
+  Predictions generated in **under 2 seconds**
 
-Local Setup
-Clone and setup
+* 📱 **Responsive Web Interface**
+  Clean UI accessible across desktop and mobile devices
 
-bash
-**git clone https://github.com/jayveertalekar/student-performance-predictor.git**
+* 📊 **Dashboard Analytics**
+  View prediction history, average scores, and trends
+
+* 🔮 **Performance Categorization**
+  Automatically classifies students as:
+
+  * Excellent
+  * Good
+  * Average
+  * Poor
+
+* 🚀 **Production Deployment**
+  Deployed on **Render.com** using Gunicorn
+
+---
+
+## 🧠 Machine Learning Details
+
+**Algorithms Used**
+
+* Random Forest
+* XGBoost
+* CatBoost
+  (Combined using Ensemble Learning)
+
+**Model Performance**
+
+* Accuracy: ~90%
+* Prediction Time: < 2 seconds
+
+**Input Features**
+
+* Gender
+* Race/Ethnicity
+* Parental Education Level
+* Lunch Type
+* Test Preparation Status
+* Reading Score (0–100)
+* Writing Score (0–100)
+
+**Target Variable**
+
+* Math Score (0–100)
+
+**Dataset**
+
+* 1000+ student records
+* Source: Kaggle – Student Performance Dataset
+
+---
+
+## 🎯 Performance Categories
+
+| Score Range | Category     | Description                |
+| ----------- | ------------ | -------------------------- |
+| 85–100      | Excellent 🎉 | Outstanding performance    |
+| 70–84       | Good 👍      | Strong academic foundation |
+| 50–69       | Average 📈   | Scope for improvement      |
+| 0–49        | Poor 💪      | Needs focused practice     |
+
+---
+
+## 🛠️ Tech Stack
+
+* **Backend:** Flask
+* **ML Libraries:** Scikit-learn, XGBoost, CatBoost
+* **Data Handling:** Pandas, NumPy
+* **Deployment:** Render, Gunicorn
+* **Model Serialization:** Joblib
+
+---
+
+## ⚙️ Installation & Local Setup
+
+### Prerequisites
+
+* Python 3.9+
+* pip
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/jayveertalekar0/student-performance-predictor.git
 cd student-performance-predictor
+```
+
+### Create Virtual Environment
+
+```bash
 python -m venv venv
+```
 
-## On Windows:
+**Activate Environment**
+
+**Windows**
+
+```bash
 venv\Scripts\activate
+```
 
-## On Mac/Linux:
+**Mac / Linux**
+
+```bash
 source venv/bin/activate
+```
 
+### Install Dependencies
+
+```bash
 pip install -r requirements.txt
-Run the application
+```
 
-bash
+### Run the Application
+
+```bash
 python app.py
-Open in browser
+```
 
-*text
-http://localhost:5000*
+Open in browser:
 
-🎯 How to Use
-**1. Make a Prediction**
+```
+http://localhost:5000
+```
 
-Go to the prediction page
+---
 
-Fill in student details:
+## 🧪 How to Use
 
-Gender (Male/Female)
+### 1️⃣ Make a Prediction
 
-Race/Ethnicity (Group A-E)
+* Navigate to the prediction page
+* Enter student details
+* Click **“Predict Math Score”**
+* View predicted score and performance category
 
-Parental Education Level
+### 2️⃣ Dashboard
 
-Lunch Type (Free/Reduced or Standard)
+* View previous predictions
+* Monitor performance trends
+* Analyze average scores
 
-Test Preparation Status (None/Completed)
+---
 
-Reading Score (0-100)
+## 🔧 API Usage
 
-Writing Score (0-100)
+### Endpoint
 
-Click "Predict Math Score"
-
-View the predicted score and performance category
-
-**2. View Dashboard**
-
-See all your previous predictions
-
-View average scores and statistics
-
-Monitor performance trends
-
-*🤖 Machine Learning Model
-Algorithm:* Ensemble Learning (Random Forest, XGBoost, CatBoost)
-
-Accuracy: ~90% on test data
-
-Features: 7 input features including demographics and test scores
-
-Target: Math score prediction (0-100 scale)
-
-Training Data: 1000+ student records
-
-🌐 Deployment
-Deploy on Render (Free & Easy)
-Push your code to GitHub
-
-bash
-git add .
-git commit -m "Initial commit"
-git push origin main
-Deploy on Render.com:
-
-Go to Render.com
-
-Click "New +" → "Web Service"
-
-Connect your GitHub repository
-
-Configure:
-
-Name: student-predictor
-
-Environment: Python 3
-
-Build Command: pip install -r requirements.txt
-
-Start Command: gunicorn app:app
-
-Click "Create Web Service"
-
-Your app will be live at:
-
-**https://student-predictor.onrender.com**
-Other Free Deployment Options
-Railway.app: Uses railway up command
-
-PythonAnywhere: Manual file upload
-
-Streamlit Cloud: If using Streamlit version
-
-**Performance**
-
-| Score Range | Category | Emoji | Description |
-|-------------|----------|-------|-------------|
-| 85-100 | Excellent | 🎉 | Outstanding performance! |
-| 70-84 | Good | 👍 | Solid foundation! |
-| 50-69 | Average | 📈 | Room for improvement |
-| 0-49 | Poor | 💪 | Needs practice |
-🔧 API Usage
-JSON API Endpoint
+```
 POST /api/predict
+```
 
-Request:
+### Sample Request
 
-json
+```json
 {
   "gender": "female",
   "race_ethnicity": "group C",
@@ -155,105 +194,99 @@ json
   "reading_score": 85,
   "writing_score": 90
 }
-Response:
+```
 
-json
+### Sample Response
+
+```json
 {
   "success": true,
   "prediction": 88.5,
   "performance": "Excellent",
   "message": "Outstanding! You're excelling in Mathematics! 🎯"
 }
-📝 Requirements
-txt
-Flask
-pandas
-numpy
-scikit-learn
-catboost
-xgboost
-gunicorn
-joblib
-🧪 Testing the Application
-Test with sample data:
+```
 
-Gender: Female
+---
 
-Race/Ethnicity: Group C
+## 🌐 Deployment (Render)
 
-Parental Education: Bachelor's Degree
+1. Push code to GitHub
 
-Lunch: Standard
+```bash
+git add .
+git commit -m "Initial commit"
+git push origin main
+```
 
-Test Prep: Completed
+2. Go to **Render.com**
+3. Click **New → Web Service**
+4. Connect GitHub repository
+5. Configure:
 
-Reading: 85
+   * Environment: Python 3
+   * Build Command: `pip install -r requirements.txt`
+   * Start Command: `gunicorn app:app`
+6. Deploy 🎉
 
-Writing: 90
+---
 
-Expected Prediction: ~88-92/100 (Excellent)
+## 🧪 Sample Test Case
 
-Test edge cases:
+| Feature            | Value             |
+| ------------------ | ----------------- |
+| Gender             | Female            |
+| Race               | Group C           |
+| Parental Education | Bachelor’s Degree |
+| Lunch              | Standard          |
+| Test Prep          | Completed         |
+| Reading            | 85                |
+| Writing            | 90                |
 
-All minimum scores (0, 0) → ~30-40/100 (Poor)
+**Expected Output:**
+👉 88–92 (Excellent)
 
-All maximum scores (100, 100) → ~95-100/100 (Excellent)
+---
 
-🔍 Troubleshooting
-Common Issues:
-Port already in use:
+## 📈 Performance Metrics
 
-bash
-# Change port in app.py or use:
-app.run(host='0.0.0.0', port=5001)
-Model files not found:
+* Model Accuracy: **90%+**
+* API Response Time: **< 200ms**
+* Prediction Time: **< 2 seconds**
+* Deployment Uptime: **99.9%**
 
-Ensure artifacts/model.pkl and artifacts/preprocessor.pkl exist
+---
 
-Run model training script first if needed
+## 🤝 Contributing
 
-Deployment fails on Render:
+Contributions are welcome!
 
-Check requirements.txt format
+1. Fork the repo
+2. Create a feature branch
+3. Commit changes
+4. Open a Pull Request
 
-Ensure Procfile exists with: web: gunicorn app:app
+---
 
-Check build logs in Render dashboard
+## 📄 License
 
-📈 Performance Metrics
-Model Accuracy: 90%+
+This project is licensed under the **MIT License**.
 
-Prediction Time: < 2 seconds
+---
 
-Uptime: 99.9% (on Render)
+## 🙏 Acknowledgments
 
-Response Time: < 200ms
+* Kaggle Student Performance Dataset
+* Flask & Scikit-learn community
+* Render.com for free deployment
 
-🤝 Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
+---
 
-Fork the repository
+## 📧 Contact
 
-Create your feature branch (git checkout -b feature/AmazingFeature)
+For suggestions or issues, please open a **GitHub Issue**.
+⭐ If you like this project, don’t forget to **star the repo**!
 
-Commit your changes (git commit -m 'Add some AmazingFeature')
+---
 
-Push to the branch (git push origin feature/AmazingFeature)
-
-Open a Pull Request
-
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-🙏 Acknowledgments
-Dataset from Kaggle Student Performance Dataset
-
-Flask framework for web development
-
-Scikit-learn for machine learning tools
-
-Render.com for free hosting
-
-📧 Contact
-For questions or feedback, please open an issue on GitHub.
-
+💡 **This project is resume-ready and demonstrates real-world ML deployment skills.**
